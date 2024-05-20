@@ -6,6 +6,13 @@
   "scripts": {
     "build": "tsc",
     "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "start": "ts-node src/index.js",
+    "typeorm": "typeorm-ts-node-commonjs -d ./src/database/index.ts",
+    "migration:generate": "yarn typeorm migration:generate",
+    "migration:show": "yarn typeorm migration:show",
+    "migration:run": "yarn typeorm migration:run",
+    "migration:revert": "yarn typeorm migration:revert",
+    "migration:create": "typeorm-ts-node-commonjs migration:create",
     "biome:check": "biome check ./src"
   },
   "dependencies": {
